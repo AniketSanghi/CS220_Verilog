@@ -1,0 +1,66 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Feb  6 16:02:21 2019
+# Process ID: 19735
+# Log file: /users/btech/sanghi/CS220/Lab4_1/print/planAhead_run_1/planAhead.log
+# Journal file: /users/btech/sanghi/CS220/Lab4_1/print/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/sanghi/CS220/Lab4_1/print/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin R15 [get_ports {data[3]}]
+endgroup
+startgroup
+set_property package_pin R16 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports {data[1]}]
+endgroup
+startgroup
+set_property package_pin M15 [get_ports {data[0]}]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list {data[3]} {data[2]} {data[1]} {data[0]}]]
+set_property drive 4 [get_ports [list {data[3]} {data[2]} {data[1]} {data[0]}]]
+startgroup
+set_property package_pin R1 [get_ports {data[3]}]
+endgroup
+startgroup
+set_property package_pin R16 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin R15 [get_ports {data[0]}]
+endgroup
+startgroup
+set_property package_pin A13 [get_ports {data[1]}]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin M15 [get_ports {data[3]}]
+endgroup
+startgroup
+set_property package_pin R16 [get_ports {data[1]}]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+startgroup
+set_property package_pin M18 [get_ports lcd_e]
+endgroup
+startgroup
+set_property package_pin L18 [get_ports lcd_rs]
+endgroup
+startgroup
+set_property package_pin L17 [get_ports lcd_w]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list lcd_e]]
+set_property iostandard LVCMOS33 [get_ports [list lcd_rs]]
+set_property iostandard LVCMOS33 [get_ports [list lcd_w]]
+set_property drive 4 [get_ports [list lcd_e]]
+set_property drive 4 [get_ports [list lcd_rs]]
+set_property drive 4 [get_ports [list lcd_w]]
+save_constraints

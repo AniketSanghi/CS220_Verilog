@@ -1,0 +1,29 @@
+Command line:
+   ledripple_top_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  35132
+
+Wed Jan 30 15:40:12 2019
+
+
+ Elaboration Time: 0.05 sec
+
+ Current Memory Usage: 226.836 Meg
+
+ Total Signals          : 15
+ Total Nets             : 22
+ Total Signal Drivers   : 7
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 13
+ Total Traceable Variables  : 21
+ Total Scalar Nets and Variables : 143
+Total Line Count : 40
+
+ Total Simulation Time: 0.83 sec
+
+ Current Memory Usage: 301.294 Meg
+
+Wed Jan 30 15:40:29 2019
+

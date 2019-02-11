@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab2_3/eight_bit_compartor/eight_bit_comparator.xst" -ofn "/users/btech/sanghi/CS220/Lab2_3/eight_bit_compartor/eight_bit_comparator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc eight_bit_comparator.ucf -p xc3s500e-fg320-4 eight_bit_comparator.ngc eight_bit_comparator.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o eight_bit_comparator_map.ncd eight_bit_comparator.ngd eight_bit_comparator.pcf 
+par -w -intstyle ise -ol high -t 1 eight_bit_comparator_map.ncd eight_bit_comparator.ncd eight_bit_comparator.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml eight_bit_comparator.twx eight_bit_comparator.ncd -o eight_bit_comparator.twr eight_bit_comparator.pcf -ucf eight_bit_comparator.ucf 
+bitgen -intstyle ise -f eight_bit_comparator.ut eight_bit_comparator.ncd 

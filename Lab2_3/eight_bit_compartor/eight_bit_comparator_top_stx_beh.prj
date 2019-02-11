@@ -1,0 +1,4 @@
+verilog isim_temp "comparator.v"
+verilog isim_temp "eight_bit_comparator.v"
+verilog isim_temp "eight_bit_comparator_top.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

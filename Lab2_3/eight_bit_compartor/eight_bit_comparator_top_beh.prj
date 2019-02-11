@@ -1,0 +1,4 @@
+verilog work "comparator.v"
+verilog work "eight_bit_comparator.v"
+verilog work "eight_bit_comparator_top.v"
+verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple_top_isim_beh.exe" -prj "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple_top_beh.prj" "work.ledripple_top" "work.glbl" 

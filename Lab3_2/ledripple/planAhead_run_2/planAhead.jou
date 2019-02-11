@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Jan 30 15:23:46 2019
+# Process ID: 16357
+# Log file: /users/btech/sanghi/CS220/Lab3_2/ledripple/planAhead_run_2/planAhead.log
+# Journal file: /users/btech/sanghi/CS220/Lab3_2/ledripple/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/sanghi/CS220/Lab3_2/ledripple/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+undo
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+undo
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+save_constraints

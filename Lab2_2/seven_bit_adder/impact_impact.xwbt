@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/users/btech/sanghi/Lab2_2/seven_bit_adder/impact.xsl
+OUTFILE=/users/btech/sanghi/Lab2_2/seven_bit_adder/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/users/btech/sanghi/Lab2_2/seven_bit_adder
+LICENSE=iMPACT
+USER_INFO=iMPACT

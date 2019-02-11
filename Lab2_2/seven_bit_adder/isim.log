@@ -1,0 +1,22 @@
+ISim log file
+Running: /users/btech/sanghi/Lab2_2/seven_bit_adder/seven_bit_adder_top_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /users/btech/sanghi/Lab2_2/seven_bit_adder/seven_bit_adder_top_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+time =                   15:       1011101 +       xxx1101 = x      xxx1010
+time =                   20:       1011101 +       1011101 = 1      0111010
+time =                   30:       1011001 +       1011101 = 1      0111110
+time =                   30:       1011001 +       1011101 = 1      0110110
+time =                   35:       0011001 +       1011101 = 0      1110110
+time =                   40:       0011001 +       1011001 = 0      1110010
+time =                   45:       0011001 +       0011001 = 0      0110010
+Stopped at time : 50 ns : File "/users/btech/sanghi/Lab2_2/seven_bit_adder/seven_bit_adder_top.v" Line 84
+# exit 0

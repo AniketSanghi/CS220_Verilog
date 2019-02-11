@@ -1,0 +1,60 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Jan 30 15:23:46 2019
+# Process ID: 16357
+# Log file: /users/btech/sanghi/CS220/Lab3_2/ledripple/planAhead_run_2/planAhead.log
+# Journal file: /users/btech/sanghi/CS220/Lab3_2/ledripple/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -30 day(s)
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /users/btech/sanghi/CS220/Lab3_2/ledripple/pa.fromHdl.tcl
+# create_project -name ledripple -dir "/users/btech/sanghi/CS220/Lab3_2/ledripple/planAhead_run_2" -part xc3s500efg320-4
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2658.312 ; gain = 29.703
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "ledripple.ucf" [current_fileset -constrset]
+Adding file '/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {ledripple.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top ledripple $srcset
+# add_files [list {ledripple.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc3s500efg320-4
+Using Verific elaboration
+Parsing VHDL file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.v" into library work
+INFO: [Designutils 20-910] Reading macro library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
+Parsing EDIF File [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Finished Parsing EDIF File [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Loading clock regions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/xc3s500e/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/xc3s500e/ClockBuffers.xml
+Loading package from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/xc3s500e/fg320/Package.xml
+Loading io standards from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/IOStandards.xml
+INFO: [Device 21-19] Loading pkg sso from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/xc3s500e/fg320/SSORules.xml
+Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/spartan3e/drc.xml
+INFO: [Timing 38-77] Reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+INFO: [Timing 38-34] Done reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+Parsing UCF File [/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.ucf]
+Finished Parsing UCF File [/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 8bdebd5b
+open_rtl_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2782.652 ; gain = 121.336
+update_compile_order -fileset sim_1
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+undo
+INFO: [Common 17-17] undo 'set_property iostandard LVCMOS33 [get_ports [list clk]]'
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+undo
+INFO: [Common 17-17] undo 'set_property iostandard LVCMOS33 [get_ports [list clk]]'
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+save_constraints
+save_constraints: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 2828.109 ; gain = 0.000
+exit

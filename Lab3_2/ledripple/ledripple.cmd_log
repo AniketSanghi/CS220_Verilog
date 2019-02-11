@@ -1,0 +1,24 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.xst" -ofn "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.xst" -ofn "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ledripple.ucf -p xc3s500e-fg320-4 ledripple.ngc ledripple.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o ledripple_map.ncd ledripple.ngd ledripple.pcf 
+par -w -intstyle ise -ol high -t 1 ledripple_map.ncd ledripple.ncd ledripple.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml ledripple.twx ledripple.ncd -o ledripple.twr ledripple.pcf -ucf ledripple.ucf 
+bitgen -intstyle ise -f ledripple.ut ledripple.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ledripple.ucf -p xc3s500e-fg320-4 ledripple.ngc ledripple.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o ledripple_map.ncd ledripple.ngd ledripple.pcf 
+par -w -intstyle ise -ol high -t 1 ledripple_map.ncd ledripple.ncd ledripple.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml ledripple.twx ledripple.ncd -o ledripple.twr ledripple.pcf -ucf ledripple.ucf 
+bitgen -intstyle ise -f ledripple.ut ledripple.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.xst" -ofn "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ledripple.ucf -p xc3s500e-fg320-4 ledripple.ngc ledripple.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o ledripple_map.ncd ledripple.ngd ledripple.pcf 
+par -w -intstyle ise -ol high -t 1 ledripple_map.ncd ledripple.ncd ledripple.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml ledripple.twx ledripple.ncd -o ledripple.twr ledripple.pcf -ucf ledripple.ucf 
+bitgen -intstyle ise -f ledripple.ut ledripple.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.xst" -ofn "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ledripple.ucf -p xc3s500e-fg320-4 ledripple.ngc ledripple.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o ledripple_map.ncd ledripple.ngd ledripple.pcf 
+par -w -intstyle ise -ol high -t 1 ledripple_map.ncd ledripple.ncd ledripple.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml ledripple.twx ledripple.ncd -o ledripple.twr ledripple.pcf -ucf ledripple.ucf 
+bitgen -intstyle ise -f ledripple.ut ledripple.ncd 

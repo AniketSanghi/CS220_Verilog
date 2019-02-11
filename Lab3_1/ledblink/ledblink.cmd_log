@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab3_1/ledblink/ledblink.xst" -ofn "/users/btech/sanghi/CS220/Lab3_1/ledblink/ledblink.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ledblink.ucf -p xc3s500e-fg320-4 ledblink.ngc ledblink.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o ledblink_map.ncd ledblink.ngd ledblink.pcf 
+par -w -intstyle ise -ol high -t 1 ledblink_map.ncd ledblink.ncd ledblink.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml ledblink.twx ledblink.ncd -o ledblink.twr ledblink.pcf -ucf ledblink.ucf 
+bitgen -intstyle ise -f ledblink.ut ledblink.ncd 

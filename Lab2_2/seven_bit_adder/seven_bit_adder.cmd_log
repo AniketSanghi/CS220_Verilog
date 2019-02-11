@@ -1,0 +1,10 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/Lab2_2/seven_bit_adder/seven_bit_adder.xst" -ofn "/users/btech/sanghi/Lab2_2/seven_bit_adder/seven_bit_adder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seven_bit_adder.ucf -p xc3s500e-fg320-4 seven_bit_adder.ngc seven_bit_adder.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o seven_bit_adder_map.ncd seven_bit_adder.ngd seven_bit_adder.pcf 
+par -w -intstyle ise -ol high -t 1 seven_bit_adder_map.ncd seven_bit_adder.ncd seven_bit_adder.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seven_bit_adder.twx seven_bit_adder.ncd -o seven_bit_adder.twr seven_bit_adder.pcf -ucf seven_bit_adder.ucf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seven_bit_adder.ucf -p xc3s500e-fg320-4 seven_bit_adder.ngc seven_bit_adder.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o seven_bit_adder_map.ncd seven_bit_adder.ngd seven_bit_adder.pcf 
+par -w -intstyle ise -ol high -t 1 seven_bit_adder_map.ncd seven_bit_adder.ncd seven_bit_adder.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seven_bit_adder.twx seven_bit_adder.ncd -o seven_bit_adder.twr seven_bit_adder.pcf -ucf seven_bit_adder.ucf 
+bitgen -intstyle ise -f seven_bit_adder.ut seven_bit_adder.ncd 

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/sanghi/CS220/Lab2_3/eight_bit_compartor/eight_bit_comparator.ncd
+OUTFILE=/users/btech/sanghi/CS220/Lab2_3/eight_bit_compartor/eight_bit_comparator.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/sanghi/CS220/Lab2_3/eight_bit_compartor
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676

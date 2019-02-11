@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/users/btech/sanghi/CS220/Lab3_2/ledripple/impact.xsl
+OUTFILE=/users/btech/sanghi/CS220/Lab3_2/ledripple/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/users/btech/sanghi/CS220/Lab3_2/ledripple
+LICENSE=iMPACT
+USER_INFO=iMPACT

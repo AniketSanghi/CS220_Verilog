@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/sanghi/Lab2_2/seven_bit_adder/seven_bit_adder.ncd
+OUTFILE=/users/btech/sanghi/Lab2_2/seven_bit_adder/seven_bit_adder.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/sanghi/Lab2_2/seven_bit_adder
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676

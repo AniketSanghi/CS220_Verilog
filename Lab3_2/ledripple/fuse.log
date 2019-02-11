@@ -1,0 +1,22 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple_top_isim_beh.exe -prj /users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple_top_beh.prj work.ledripple_top work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.v" into library work
+Analyzing Verilog file "/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple_top.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 94640 KB
+Fuse CPU Usage: 1420 ms
+Compiling module ledripple
+Compiling module ledripple_top
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 3 Verilog Units
+Built simulation executable /users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple_top_isim_beh.exe
+Fuse Memory Usage: 654824 KB
+Fuse CPU Usage: 1440 ms
+GCC CPU Usage: 440 ms

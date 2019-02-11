@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab3_3/four4add/five4add.xst" -ofn "/users/btech/sanghi/CS220/Lab3_3/four4add/five4add.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc five4add.ucf -p xc3s500e-fg320-4 five4add.ngc five4add.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o five4add_map.ncd five4add.ngd five4add.pcf 
+par -w -intstyle ise -ol high -t 1 five4add_map.ncd five4add.ncd five4add.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml five4add.twx five4add.ncd -o five4add.twr five4add.pcf -ucf five4add.ucf 
+bitgen -intstyle ise -f five4add.ut five4add.ncd 

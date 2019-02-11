@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.ncd
+OUTFILE=/users/btech/sanghi/CS220/Lab3_2/ledripple/ledripple.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/sanghi/CS220/Lab3_2/ledripple
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676

@@ -1,0 +1,29 @@
+Command line:
+   ledblinktop_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  51271
+
+Wed Jan 30 14:10:29 2019
+
+
+ Elaboration Time: 0.05 sec
+
+ Current Memory Usage: 226.832 Meg
+
+ Total Signals          : 15
+ Total Nets             : 15
+ Total Signal Drivers   : 7
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 11
+ Total Traceable Variables  : 21
+ Total Scalar Nets and Variables : 129
+Total Line Count : 32
+
+ Total Simulation Time: 1.36 sec
+
+ Current Memory Usage: 301.289 Meg
+
+Wed Jan 30 14:11:05 2019
+

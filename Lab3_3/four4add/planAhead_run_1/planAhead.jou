@@ -1,0 +1,83 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Jan 30 16:42:01 2019
+# Process ID: 18236
+# Log file: /users/btech/sanghi/CS220/Lab3_3/four4add/planAhead_run_1/planAhead.log
+# Journal file: /users/btech/sanghi/CS220/Lab3_3/four4add/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/sanghi/CS220/Lab3_3/four4add/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin L13 [get_ports {PB[0]}]
+endgroup
+startgroup
+set_property package_pin L14 [get_ports {PB[1]}]
+endgroup
+startgroup
+set_property package_pin H18 [get_ports {PB[2]}]
+endgroup
+set_property package_pin "" [get_ports [list  {PB[3]}]]
+startgroup
+set_property package_pin K17 [get_ports {PB[0]}]
+endgroup
+startgroup
+set_property package_pin D18 [get_ports {PB[1]}]
+endgroup
+startgroup
+set_property package_pin V4 [get_ports {PB[2]}]
+endgroup
+startgroup
+set_property package_pin H13 [get_ports {PB[3]}]
+endgroup
+set_property iostandard LVTTL [get_ports [list {PB[3]} {PB[2]} {PB[1]} {PB[0]}]]
+set_property pulltype PULLDOWN [get_ports [list {PB[3]} {PB[2]} {PB[1]} {PB[0]}]]
+startgroup
+set_property package_pin F12 [get_ports {sum[0]}]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports {sum[1]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {sum[2]}]
+endgroup
+startgroup
+set_property package_pin F11 [get_ports {sum[3]}]
+endgroup
+startgroup
+set_property package_pin C11 [get_ports {sum[4]}]
+endgroup
+startgroup
+set_property package_pin D11 [get_ports {sum[5]}]
+endgroup
+startgroup
+set_property package_pin E9 [get_ports {sum[6]}]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports {sum[1]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {sum[4]}]]
+set_property is_loc_fixed true [get_ports [list  {sum[4]}]]
+set_property iostandard LVTTL [get_ports [list {sum[6]} {sum[5]} {sum[4]} {sum[3]} {sum[2]} {sum[1]} {sum[0]}]]
+set_property drive 8 [get_ports [list {sum[6]} {sum[5]} {sum[4]} {sum[3]} {sum[2]} {sum[1]} {sum[0]}]]
+startgroup
+set_property package_pin L13 [get_ports {Y[0]}]
+endgroup
+startgroup
+set_property package_pin L14 [get_ports {Y[1]}]
+endgroup
+startgroup
+set_property package_pin H18 [get_ports {Y[2]}]
+endgroup
+startgroup
+set_property package_pin N17 [get_ports {Y[3]}]
+endgroup
+set_property iostandard LVTTL [get_ports [list {Y[3]} {Y[2]} {Y[1]} {Y[0]}]]
+set_property pulltype PULLUP [get_ports [list {Y[3]} {Y[2]} {Y[1]} {Y[0]}]]
+startgroup
+set_property package_pin V16 [get_ports RPB]
+endgroup
+set_property iostandard LVTTL [get_ports [list RPB]]
+set_property pulltype PULLDOWN [get_ports [list RPB]]
+save_constraints

@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Thu Jan 24 16:06:06 2019
+# Process ID: 11603
+# Log file: /users/btech/sanghi/Lab2_2/seven_bit_adder/planAhead_run_1/planAhead.log
+# Journal file: /users/btech/sanghi/Lab2_2/seven_bit_adder/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/sanghi/Lab2_2/seven_bit_adder/pa.fromHdl.tcl
+update_compile_order -fileset sim_1

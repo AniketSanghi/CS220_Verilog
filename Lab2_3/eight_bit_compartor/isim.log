@@ -1,0 +1,23 @@
+ISim log file
+Running: /users/btech/sanghi/CS220/Lab2_3/eight_bit_compartor/eight_bit_comparator_top_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /users/btech/sanghi/CS220/Lab2_3/eight_bit_compartor/eight_bit_comparator_top_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+time                    5:        xxxx0000        xxxxxxxx x x x
+time                   10:        00000000        xxxxxxxx x x x
+time                   10:        00000000        xxxxxxxx x 0 x
+time                   15:        00000000        xxxx0110 x 0 x
+time                   15:        00000000        xxxx0110 x 0 0
+time                   20:        00000000        10010110 x 0 0
+time                   20:        00000000        10010110 1 0 0
+time                   25:        00000110        10010110 1 0 0
+Stopped at time : 30 ns : File "/users/btech/sanghi/CS220/Lab2_3/eight_bit_compartor/eight_bit_comparator_top.v" Line 73
+# exit 0

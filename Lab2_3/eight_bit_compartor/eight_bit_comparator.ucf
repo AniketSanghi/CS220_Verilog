@@ -1,0 +1,56 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "PB[0]" LOC = K17;
+NET "PB[1]" LOC = D18;
+NET "PB[2]" LOC = V4;
+NET "PB[3]" LOC = H13;
+
+# PlanAhead Generated IO constraints 
+
+NET "PB[3]" IOSTANDARD = LVTTL;
+NET "PB[2]" IOSTANDARD = LVTTL;
+NET "PB[1]" IOSTANDARD = LVTTL;
+NET "PB[0]" IOSTANDARD = LVTTL;
+NET "PB[3]" PULLDOWN;
+NET "PB[2]" PULLDOWN;
+NET "PB[1]" PULLDOWN;
+NET "PB[0]" PULLDOWN;
+
+# PlanAhead Generated physical constraints 
+
+NET "Y[0]" LOC = L13;
+NET "Y[1]" LOC = L14;
+NET "Y[2]" LOC = H18;
+NET "Y[3]" LOC = N17;
+
+# PlanAhead Generated IO constraints 
+
+NET "Y[3]" IOSTANDARD = LVTTL;
+NET "Y[2]" IOSTANDARD = LVTTL;
+NET "Y[1]" IOSTANDARD = LVTTL;
+NET "Y[0]" IOSTANDARD = LVTTL;
+NET "Y[3]" PULLUP;
+NET "Y[2]" PULLUP;
+NET "Y[1]" PULLUP;
+NET "Y[0]" PULLUP;
+
+# PlanAhead Generated physical constraints 
+
+NET "lf" LOC = E11;
+NET "gf" LOC = E12;
+NET "ef" LOC = F12;
+
+# PlanAhead Generated IO constraints 
+
+NET "ef" IOSTANDARD = LVTTL;
+NET "gf" IOSTANDARD = LVTTL;
+NET "lf" IOSTANDARD = LVTTL;
+NET "ef" DRIVE = 8;
+NET "lf" DRIVE = 8;
+NET "gf" DRIVE = 8;
+
+NET "PB[0]" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB[1]" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB[2]" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB[3]" CLOCK_DEDICATED_ROUTE = FALSE;
