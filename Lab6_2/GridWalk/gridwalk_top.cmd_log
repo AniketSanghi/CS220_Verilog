@@ -1,0 +1,89 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.xst" -ofn "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4 gridwalk_top.ngc gridwalk_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o gridwalk_top_map.ncd gridwalk_top.ngd gridwalk_top.pcf 
+par -w -intstyle ise -ol high -t 1 gridwalk_top_map.ncd gridwalk_top.ncd gridwalk_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml gridwalk_top.twx gridwalk_top.ncd -o gridwalk_top.twr gridwalk_top.pcf -ucf gridwalk_top.ucf 
+bitgen -intstyle ise -f gridwalk_top.ut gridwalk_top.ncd 

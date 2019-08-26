@@ -1,0 +1,4 @@
+MO lcd_driver NULL lcd_driver.v vlg46/lcd__driver.bin 1553680736
+MO rotor NULL rotor.v vlg76/rotor.bin 1553680737
+MO processor NULL processor.v vlg74/processor.bin 1553680737
+MO processor_top NULL processor_top.v vlg06/processor__top.bin 1553680738

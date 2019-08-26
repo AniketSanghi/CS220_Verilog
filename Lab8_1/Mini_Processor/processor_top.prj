@@ -1,0 +1,4 @@
+verilog work "lcd_driver.v"
+verilog work "rotor.v"
+verilog work "processor.v"
+verilog work "processor_top.v"

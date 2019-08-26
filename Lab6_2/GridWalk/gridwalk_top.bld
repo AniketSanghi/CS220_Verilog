@@ -1,0 +1,41 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -uc gridwalk_top.ucf -p xc3s500e-fg320-4
+gridwalk_top.ngc gridwalk_top.ngd
+
+Reading NGO file "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.ngc"
+...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "gridwalk_top.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem - The Period constraint <NET "clk" PERIOD = 20.0ns HIGH
+   50%;> [gridwalk_top.ucf(57)], is specified using the Net Period method which
+   is not recommended. Please use the Timespec PERIOD method.
+
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 394424 kilobytes
+
+Writing NGD file "gridwalk_top.ngd" ...
+Total REAL time to NGDBUILD completion:  7 sec
+Total CPU time to NGDBUILD completion:   5 sec
+
+Writing NGDBUILD log file "gridwalk_top.bld"...

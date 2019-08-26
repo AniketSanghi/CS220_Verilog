@@ -1,0 +1,3 @@
+verilog work "Rotor.v"
+verilog work "led_ripple.v"
+verilog work "rotor_top.v"

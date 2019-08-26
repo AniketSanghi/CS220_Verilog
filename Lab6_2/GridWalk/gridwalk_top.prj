@@ -1,0 +1,4 @@
+verilog work "onebitadder.v"
+verilog work "rotor.v"
+verilog work "gridwalk.v"
+verilog work "gridwalk_top.v"

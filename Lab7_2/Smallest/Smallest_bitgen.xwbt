@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.ncd
+OUTFILE=/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/sanghi/CS220/Lab7_2/Smallest
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676

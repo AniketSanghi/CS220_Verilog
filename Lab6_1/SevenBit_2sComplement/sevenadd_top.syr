@@ -1,0 +1,446 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+Reading design: sevenadd_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "sevenadd_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "sevenadd_top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : sevenadd_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "onebitadder.v" in library work
+Compiling verilog file "sevenbitadder.v" in library work
+Module <onebitadder> compiled
+Compiling verilog file "rotor.v" in library work
+Module <sevenbitadder> compiled
+Compiling verilog file "sevenadd_top.v" in library work
+Module <rotor> compiled
+Module <sevenadd_top> compiled
+No errors in compilation
+Analysis of file <"sevenadd_top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <sevenadd_top> in library <work>.
+
+Analyzing hierarchy for module <rotor> in library <work>.
+
+Analyzing hierarchy for module <sevenbitadder> in library <work>.
+
+Analyzing hierarchy for module <onebitadder> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <sevenadd_top>.
+Module <sevenadd_top> is correct for synthesis.
+ 
+Analyzing module <rotor> in library <work>.
+Module <rotor> is correct for synthesis.
+ 
+Analyzing module <sevenbitadder> in library <work>.
+Module <sevenbitadder> is correct for synthesis.
+ 
+Analyzing module <onebitadder> in library <work>.
+Module <onebitadder> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <rotor>.
+    Related source file is "rotor.v".
+    Found 1-bit register for signal <rot_dir>.
+    Found 1-bit register for signal <rot_event>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <rotor> synthesized.
+
+
+Synthesizing Unit <onebitadder>.
+    Related source file is "onebitadder.v".
+    Found 1-bit xor3 for signal <sum>.
+    Found 1-bit xor2 for signal <cout$xor0000> created at line 28.
+    Summary:
+	inferred   1 Xor(s).
+Unit <onebitadder> synthesized.
+
+
+Synthesizing Unit <sevenbitadder>.
+    Related source file is "sevenbitadder.v".
+WARNING:Xst:647 - Input <rot_dir> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found finite state machine <FSM_0> for signal <step>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | step$and0000              (positive)           |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit xor2 for signal <led<7>>.
+    Found 7-bit register for signal <A>.
+    Found 7-bit register for signal <B>.
+    Found 1-bit register for signal <op>.
+    Found 1-bit register for signal <prev_rot_event>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  16 D-type flip-flop(s).
+Unit <sevenbitadder> synthesized.
+
+
+Synthesizing Unit <sevenadd_top>.
+    Related source file is "sevenadd_top.v".
+Unit <sevenadd_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 18
+ 1-bit register                                        : 18
+# Xors                                                 : 15
+ 1-bit xor2                                            : 8
+ 1-bit xor3                                            : 7
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <A1/step/FSM> on signal <step[1:5]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00001
+ 001   | 00010
+ 010   | 00100
+ 011   | 01000
+ 100   | 10000
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Registers                                            : 18
+ Flip-Flops                                            : 18
+# Xors                                                 : 15
+ 1-bit xor2                                            : 8
+ 1-bit xor3                                            : 7
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <sevenadd_top> ...
+
+Optimizing unit <sevenbitadder> ...
+WARNING:Xst:2677 - Node <R1/rot_dir> of sequential type is unconnected in block <sevenadd_top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block sevenadd_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 22
+ Flip-Flops                                            : 22
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : sevenadd_top.ngr
+Top Level Output File Name         : sevenadd_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 15
+
+Cell Usage :
+# BELS                             : 23
+#      GND                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 6
+#      LUT4                        : 12
+# FlipFlops/Latches                : 22
+#      FD                          : 1
+#      FDE                         : 20
+#      FDSE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 14
+#      IBUF                        : 6
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       13  out of   4656     0%  
+ Number of Slice Flip Flops:             22  out of   9312     0%  
+ Number of 4 input LUTs:                 22  out of   9312     0%  
+ Number of IOs:                          15
+ Number of bonded IOBs:                  15  out of    232     6%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 22    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 3.327ns (Maximum Frequency: 300.571MHz)
+   Minimum input arrival time before clock: 3.875ns
+   Maximum output required time after clock: 13.054ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.327ns (frequency: 300.571MHz)
+  Total number of paths / destination ports: 61 / 26
+-------------------------------------------------------------------------
+Delay:               3.327ns (Levels of Logic = 1)
+  Source:            A1/prev_rot_event (FF)
+  Destination:       A1/step_FSM_FFd1 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: A1/prev_rot_event to A1/step_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.591   0.844  A1/prev_rot_event (A1/prev_rot_event)
+     LUT2:I0->O            5   0.704   0.633  A1/A_3_not000111 (A1/step_and0000)
+     FDE:CE                    0.555          A1/step_FSM_FFd5
+    ----------------------------------------
+    Total                      3.327ns (1.850ns logic, 1.477ns route)
+                                       (55.6% logic, 44.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 19 / 17
+-------------------------------------------------------------------------
+Offset:              3.875ns (Levels of Logic = 2)
+  Source:            rota (PAD)
+  Destination:       R1/rot_event (FF)
+  Destination Clock: clk rising
+
+  Data Path: rota to R1/rot_event
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  rota_IBUF (rota_IBUF)
+     LUT2:I0->O            1   0.704   0.420  R1/rot_event_and00001 (R1/rot_event_and0000)
+     FDSE:S                    0.911          R1/rot_event
+    ----------------------------------------
+    Total                      3.875ns (2.833ns logic, 1.042ns route)
+                                       (73.1% logic, 26.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 104 / 8
+-------------------------------------------------------------------------
+Offset:              13.054ns (Levels of Logic = 8)
+  Source:            A1/op (FF)
+  Destination:       led<7> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: A1/op to led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             13   0.591   1.062  A1/op (A1/op)
+     LUT3:I1->O            2   0.704   0.451  A1/FA1/cout1 (A1/cout<0>)
+     LUT4:I3->O            2   0.704   0.451  A1/FA2/cout1 (A1/cout<1>)
+     LUT4:I3->O            2   0.704   0.451  A1/FA3/cout1 (A1/cout<2>)
+     LUT4:I3->O            2   0.704   0.451  A1/FA4/cout1 (A1/cout<3>)
+     LUT4:I3->O            2   0.704   0.451  A1/FA5/cout1 (A1/cout<4>)
+     LUT4:I3->O            2   0.704   0.526  A1/FA6/cout1 (A1/cout<5>)
+     LUT4:I1->O            1   0.704   0.420  A1/Mxor_led<7>_Result1 (led_7_OBUF)
+     OBUF:I->O                 3.272          led_7_OBUF (led<7>)
+    ----------------------------------------
+    Total                     13.054ns (8.791ns logic, 4.263ns route)
+                                       (67.3% logic, 32.7% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 8.82 secs
+ 
+--> 
+
+
+Total memory usage is 517396 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

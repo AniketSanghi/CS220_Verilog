@@ -1,0 +1,691 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: processor.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "processor.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "processor"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : processor
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "processor.v" in library work
+Module <processor> compiled
+No errors in compilation
+Analysis of file <"processor.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <processor> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <processor>.
+INFO:Xst:1433 - Contents of array <Preg> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <processor> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <processor>.
+    Related source file is "processor.v".
+WARNING:Xst:646 - Signal <data<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <Preg> is used but never assigned. Tied to default value.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 7x32-bit ROM for signal <$varindex0000> created at line 74.
+    Found 8-bit register for signal <led>.
+    Found 8-bit 32-to-1 multiplexer for signal <$varindex0001> created at line 111.
+    Found 8-bit 32-to-1 multiplexer for signal <$varindex0002> created at line 112.
+    Found 8-bit register for signal <ans>.
+    Found 8-bit addsub for signal <ans$share0000> created at line 117.
+    Found 5-bit register for signal <d>.
+    Found 32-bit register for signal <data>.
+    Found 6-bit register for signal <func>.
+    Found 1-bit register for signal <invalid>.
+    Found 6-bit register for signal <opcode>.
+    Found 4-bit up counter for signal <PC>.
+    Found 256-bit register for signal <register>.
+    Found 5-bit register for signal <s1>.
+    Found 5-bit register for signal <s2>.
+    Found 4-bit comparator less for signal <state$cmp_lt0000> created at line 141.
+    Found 8-bit register for signal <sval1>.
+    Found 8-bit register for signal <sval2>.
+    Found 8-bit register for signal <value>.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <register>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred 356 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+	inferred  16 Multiplexer(s).
+Unit <processor> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 7x32-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 8-bit addsub                                          : 1
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 44
+ 1-bit register                                        : 1
+ 32-bit register                                       : 1
+ 5-bit register                                        : 3
+ 6-bit register                                        : 2
+ 8-bit register                                        : 37
+# Comparators                                          : 1
+ 4-bit comparator less                                 : 1
+# Multiplexers                                         : 2
+ 8-bit 32-to-1 multiplexer                             : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:7]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000001
+ 0001  | 0000010
+ 0010  | 0000100
+ 0011  | 0001000
+ 0100  | 0010000
+ 0101  | 0100000
+ 0110  | 1000000
+-------------------
+WARNING:Xst:2677 - Node <data_8> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <data_9> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <data_10> of sequential type is unconnected in block <processor>.
+
+Synthesizing (advanced) Unit <processor>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom__varindex0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <processor> synthesized (advanced).
+WARNING:Xst:2677 - Node <data_8> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <data_9> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <data_10> of sequential type is unconnected in block <processor>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 1
+ 7x32-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 8-bit addsub                                          : 1
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 353
+ Flip-Flops                                            : 353
+# Comparators                                          : 1
+ 4-bit comparator less                                 : 1
+# Multiplexers                                         : 16
+ 1-bit 32-to-1 multiplexer                             : 16
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <s2_3> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s2_4> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s1_3> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s1_4> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_19> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_20> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_24> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_25> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_27> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_28> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_30> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_31> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <opcode_1> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <opcode_2> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <opcode_4> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <opcode_5> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <register_8_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_8_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_8_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_8_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_8_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_8_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_8_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_8_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_11_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_11_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_11_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_11_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_11_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_11_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_11_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_11_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_9_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_9_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_9_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_9_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_9_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_9_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_9_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_9_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_10_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_10_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_10_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_10_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_10_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_10_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_10_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_10_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_12_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_12_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_12_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_12_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_12_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_12_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_12_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_12_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_13_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_13_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_13_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_13_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_13_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_13_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_13_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_13_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_14_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_14_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_14_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_14_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_14_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_14_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_14_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_14_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_15_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_15_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_15_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_15_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_15_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_15_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_15_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_15_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_18_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_18_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_18_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_18_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_18_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_18_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_18_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_18_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_16_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_16_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_16_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_16_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_16_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_16_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_16_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_16_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_17_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_17_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_17_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_17_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_17_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_17_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_17_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_17_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_21_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_21_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_21_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_21_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_21_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_21_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_21_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_21_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_19_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_19_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_19_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_19_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_19_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_19_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_19_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_19_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_20_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_20_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_20_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_20_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_20_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_20_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_20_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_20_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_24_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_24_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_24_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_24_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_24_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_24_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_24_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_24_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_22_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_22_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_22_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_22_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_22_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_22_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_22_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_22_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_23_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_23_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_23_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_23_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_23_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_23_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_23_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_23_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_27_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_27_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_27_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_27_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_27_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_27_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_27_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_27_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_25_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_25_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_25_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_25_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_25_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_25_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_25_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_25_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_26_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_26_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_26_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_26_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_26_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_26_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_26_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_26_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_30_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_30_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_30_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_30_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_30_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_30_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_30_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_30_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_28_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_28_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_28_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_28_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_28_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_28_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_28_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_28_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_29_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_29_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_29_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_29_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_29_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_29_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_29_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_29_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_31_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_31_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_31_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_31_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_31_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_31_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_31_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <register_31_7> of sequential type is unconnected in block <processor>.
+INFO:Xst:2261 - The FF/Latch <data_6> in Unit <processor> is equivalent to the following 3 FFs/Latches, which will be removed : <data_7> <data_14> <data_15> 
+INFO:Xst:2261 - The FF/Latch <data_11> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <data_17> 
+INFO:Xst:2261 - The FF/Latch <data_26> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <data_29> 
+INFO:Xst:2261 - The FF/Latch <opcode_0> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <opcode_3> 
+
+Optimizing unit <processor> ...
+WARNING:Xst:1293 - FF/Latch <invalid> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register_0_0> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_1> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_2> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_3> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_4> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_5> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_6> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_7> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register_0_0> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_1> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_2> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_3> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_4> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_5> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_6> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_7> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <PC_2> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <data_4> 
+WARNING:Xst:1293 - FF/Latch <register_0_0> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_1> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_2> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_3> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_4> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_5> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_6> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_7> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <PC_2> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <data_4> 
+WARNING:Xst:1293 - FF/Latch <register_0_0> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_1> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_2> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_3> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_4> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_5> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_6> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <register_0_7> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <PC_2> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <data_4> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block processor, actual ratio is 2.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 140
+ Flip-Flops                                            : 140
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : processor.ngr
+Top Level Output File Name         : processor
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 252
+#      GND                         : 1
+#      INV                         : 3
+#      LUT2                        : 14
+#      LUT3                        : 95
+#      LUT3_D                      : 2
+#      LUT4                        : 68
+#      LUT4_D                      : 1
+#      LUT4_L                      : 1
+#      MUXCY                       : 7
+#      MUXF5                       : 36
+#      MUXF6                       : 16
+#      XORCY                       : 8
+# FlipFlops/Latches                : 140
+#      FD                          : 54
+#      FDE                         : 84
+#      FDR                         : 1
+#      FDS                         : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 8
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      128  out of   4656     2%  
+ Number of Slice Flip Flops:            140  out of   9312     1%  
+ Number of 4 input LUTs:                184  out of   9312     1%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    232     3%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 140   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.153ns (Maximum Frequency: 139.801MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.283ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.153ns (frequency: 139.801MHz)
+  Total number of paths / destination ports: 1593 / 226
+-------------------------------------------------------------------------
+Delay:               7.153ns (Levels of Logic = 12)
+  Source:            func_2 (FF)
+  Destination:       ans_7 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: func_2 to ans_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.591   0.666  func_2 (func_2)
+     LUT4_D:I1->LO         1   0.704   0.104  ans_mux0002_SW0 (N29)
+     LUT4:I3->O            4   0.704   0.622  ans_mux0002 (ans_mux0002)
+     LUT3:I2->O            1   0.704   0.000  Maddsub_ans_share0000_lut<0> (Maddsub_ans_share0000_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  Maddsub_ans_share0000_cy<0> (Maddsub_ans_share0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Maddsub_ans_share0000_cy<1> (Maddsub_ans_share0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Maddsub_ans_share0000_cy<2> (Maddsub_ans_share0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Maddsub_ans_share0000_cy<3> (Maddsub_ans_share0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Maddsub_ans_share0000_cy<4> (Maddsub_ans_share0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Maddsub_ans_share0000_cy<5> (Maddsub_ans_share0000_cy<5>)
+     MUXCY:CI->O           0   0.059   0.000  Maddsub_ans_share0000_cy<6> (Maddsub_ans_share0000_cy<6>)
+     XORCY:CI->O           1   0.804   0.424  Maddsub_ans_share0000_xor<7> (ans_share0000<7>)
+     LUT4:I3->O            1   0.704   0.000  ans_mux0000<0>1 (ans_mux0000<0>)
+     FD:D                      0.308          ans_7
+    ----------------------------------------
+    Total                      7.153ns (5.337ns logic, 1.816ns route)
+                                       (74.6% logic, 25.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            led_7 (FF)
+  Destination:       led<7> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: led_7 to led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.591   0.420  led_7 (led_7)
+     OBUF:I->O                 3.272          led_7_OBUF (led<7>)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 6.73 secs
+ 
+--> 
+
+
+Total memory usage is 524120 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  249 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
+

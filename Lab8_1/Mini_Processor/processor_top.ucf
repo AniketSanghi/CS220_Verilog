@@ -1,0 +1,92 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "data[0]" LOC = R15;
+
+# PlanAhead Generated IO constraints 
+
+NET "data[3]" DRIVE = 4;
+NET "data[2]" DRIVE = 4;
+NET "data[1]" DRIVE = 4;
+NET "data[0]" DRIVE = 4;
+NET "data[3]" IOSTANDARD = LVCMOS33;
+NET "data[2]" IOSTANDARD = LVCMOS33;
+NET "data[1]" IOSTANDARD = LVCMOS33;
+NET "data[0]" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "data[1]" LOC = R16;
+NET "data[2]" LOC = P17;
+NET "data[3]" LOC = M15;
+NET "PB[0]" LOC = K17;
+NET "PB[1]" LOC = D18;
+NET "PB[2]" LOC = V4;
+
+# PlanAhead Generated IO constraints 
+
+NET "PB[2]" IOSTANDARD = LVTTL;
+NET "PB[1]" IOSTANDARD = LVTTL;
+NET "PB[0]" IOSTANDARD = LVTTL;
+NET "PB[2]" PULLDOWN;
+NET "PB[1]" PULLDOWN;
+NET "PB[0]" PULLDOWN;
+
+# PlanAhead Generated physical constraints 
+
+NET "y[0]" LOC = L13;
+NET "y[1]" LOC = L14;
+NET "y[2]" LOC = H18;
+NET "y[3]" LOC = N17;
+
+# PlanAhead Generated IO constraints 
+
+NET "y[3]" IOSTANDARD = LVTTL;
+NET "y[2]" IOSTANDARD = LVTTL;
+NET "y[1]" IOSTANDARD = LVTTL;
+NET "y[0]" IOSTANDARD = LVTTL;
+NET "y[3]" PULLUP;
+NET "y[2]" PULLUP;
+NET "y[1]" PULLUP;
+NET "y[0]" PULLUP;
+
+# PlanAhead Generated physical constraints 
+
+NET "clk" LOC = C9;
+
+# PlanAhead Generated IO constraints 
+
+NET "clk" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "lcd_e" LOC = M18;
+NET "lcd_rs" LOC = L18;
+NET "lcd_w" LOC = L17;
+
+# PlanAhead Generated IO constraints 
+
+NET "lcd_e" IOSTANDARD = LVCMOS33;
+NET "lcd_rs" IOSTANDARD = LVCMOS33;
+NET "lcd_w" IOSTANDARD = LVCMOS33;
+NET "lcd_e" DRIVE = 4;
+NET "lcd_rs" DRIVE = 4;
+NET "lcd_w" DRIVE = 4;
+
+# PlanAhead Generated physical constraints 
+
+NET "rota" LOC = K18;
+NET "rotb" LOC = G18;
+
+# PlanAhead Generated IO constraints 
+
+NET "rota" IOSTANDARD = LVTTL;
+NET "rotb" IOSTANDARD = LVTTL;
+NET "rota" PULLUP;
+NET "rotb" PULLUP;
+
+NET "PB[0]" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB[1]" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB[2]" CLOCK_DEDICATED_ROUTE = FALSE;
+
+NET "clk" PERIOD = 20ns HIGH 50%;

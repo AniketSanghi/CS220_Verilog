@@ -1,0 +1,34 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc processor_top.ucf -p xc3s500e-fg320-4 processor_top.ngc processor_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o processor_top_map.ncd processor_top.ngd processor_top.pcf 
+par -w -intstyle ise -ol high -t 1 processor_top_map.ncd processor_top.ncd processor_top.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc processor_top.ucf -p xc3s500e-fg320-4 processor_top.ngc processor_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o processor_top_map.ncd processor_top.ngd processor_top.pcf 
+par -w -intstyle ise -ol high -t 1 processor_top_map.ncd processor_top.ncd processor_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml processor_top.twx processor_top.ncd -o processor_top.twr processor_top.pcf -ucf processor_top.ucf 
+bitgen -intstyle ise -f processor_top.ut processor_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc processor_top.ucf -p xc3s500e-fg320-4 processor_top.ngc processor_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o processor_top_map.ncd processor_top.ngd processor_top.pcf 
+par -w -intstyle ise -ol high -t 1 processor_top_map.ncd processor_top.ncd processor_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml processor_top.twx processor_top.ncd -o processor_top.twr processor_top.pcf -ucf processor_top.ucf 
+bitgen -intstyle ise -f processor_top.ut processor_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc processor_top.ucf -p xc3s500e-fg320-4 processor_top.ngc processor_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o processor_top_map.ncd processor_top.ngd processor_top.pcf 
+par -w -intstyle ise -ol high -t 1 processor_top_map.ncd processor_top.ncd processor_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml processor_top.twx processor_top.ncd -o processor_top.twr processor_top.pcf -ucf processor_top.ucf 
+bitgen -intstyle ise -f processor_top.ut processor_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab8_1/Mini_Processor/processor_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc processor_top.ucf -p xc3s500e-fg320-4 processor_top.ngc processor_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o processor_top_map.ncd processor_top.ngd processor_top.pcf 
+par -w -intstyle ise -ol high -t 1 processor_top_map.ncd processor_top.ncd processor_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml processor_top.twx processor_top.ncd -o processor_top.twr processor_top.pcf -ucf processor_top.ucf 
+bitgen -intstyle ise -f processor_top.ut processor_top.ncd 

@@ -1,0 +1,117 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -58 day(s)
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /users/btech/sanghi/CS220/Lab6_2/GridWalk/pa.fromHdl.tcl
+# create_project -name GridWalk -dir "/users/btech/sanghi/CS220/Lab6_2/GridWalk/planAhead_run_1" -part xc3s500efg320-4
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2679.684 ; gain = 28.570
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "gridwalk_top.ucf" [current_fileset -constrset]
+Adding file '/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {rotor.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {gridwalk.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {gridwalk_top.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top gridwalk_top $srcset
+# add_files [list {gridwalk_top.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc3s500efg320-4
+Using Verific elaboration
+Parsing VHDL file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "/users/btech/sanghi/CS220/Lab6_2/GridWalk/rotor.v" into library work
+Analyzing Verilog file "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk.v" into library work
+Analyzing Verilog file "/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.v" into library work
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'gridwalk' instantiated as 'G1' [/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.v:30]
+Resolution: File names need to match cell names: an EDIF definition will be found in gridwalk.edf; an HDL definition may be placed in any Verilog/VHDL file.
+INFO: [Designutils 20-910] Reading macro library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
+Parsing EDIF File [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Finished Parsing EDIF File [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Loading clock regions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/xc3s500e/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/xc3s500e/ClockBuffers.xml
+Loading package from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/xc3s500e/fg320/Package.xml
+Loading io standards from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/IOStandards.xml
+INFO: [Device 21-19] Loading pkg sso from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/xc3s500e/fg320/SSORules.xml
+Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan3e/spartan3e/drc.xml
+INFO: [Timing 38-77] Reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+INFO: [Timing 38-34] Done reading timing library /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+Parsing UCF File [/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.ucf]
+Finished Parsing UCF File [/users/btech/sanghi/CS220/Lab6_2/GridWalk/gridwalk_top.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 28edac3e
+open_rtl_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 2796.070 ; gain = 112.250
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin F12 [get_ports {led[0]}]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports {led[1]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {led[2]}]
+endgroup
+startgroup
+set_property package_pin F11 [get_ports {led[3]}]
+endgroup
+startgroup
+set_property package_pin C11 [get_ports {led[4]}]
+endgroup
+startgroup
+set_property package_pin D11 [get_ports {led[5]}]
+endgroup
+startgroup
+set_property package_pin E9 [get_ports {led[6]}]
+endgroup
+startgroup
+set_property package_pin F9 [get_ports {led[7]}]
+endgroup
+set_property iostandard LVTTL [get_ports [list {led[7]} {led[6]} {led[5]} {led[4]} {led[3]} {led[2]} {led[1]} {led[0]}]]
+set_property drive 8 [get_ports [list {led[7]} {led[6]} {led[5]} {led[4]} {led[3]} {led[2]} {led[1]} {led[0]}]]
+startgroup
+set_property package_pin L13 [get_ports {y[0]}]
+endgroup
+startgroup
+set_property package_pin L14 [get_ports {y[1]}]
+endgroup
+startgroup
+set_property package_pin H18 [get_ports {y[2]}]
+endgroup
+startgroup
+set_property package_pin N17 [get_ports {y[3]}]
+endgroup
+set_property iostandard LVTTL [get_ports [list {y[3]} {y[2]} {y[1]} {y[0]}]]
+set_property pulltype PULLUP [get_ports [list {y[3]} {y[2]} {y[1]} {y[0]}]]
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+startgroup
+set_property package_pin K18 [get_ports rota]
+endgroup
+startgroup
+set_property package_pin G18 [get_ports rotb]
+endgroup
+set_property iostandard LVTTL [get_ports [list rota]]
+set_property iostandard LVTTL [get_ports [list rotb]]
+set_property pulltype PULLUP [get_ports [list rota]]
+set_property pulltype PULLUP [get_ports [list rotb]]
+save_constraints
+save_constraints: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2828.637 ; gain = 0.000
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Wed Feb 27 15:51:18 2019...
+INFO: [Common 17-83] Releasing license: PlanAhead

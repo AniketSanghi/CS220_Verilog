@@ -1,0 +1,656 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Reading design: Smallest.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Smallest.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Smallest"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : Smallest
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "lcd_driver.v" in library work
+Compiling verilog file "Smallest.v" in library work
+Module <lcd_driver> compiled
+Module <Smallest> compiled
+No errors in compilation
+Analysis of file <"Smallest.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Smallest> in library <work>.
+
+Analyzing hierarchy for module <lcd_driver> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Smallest>.
+Module <Smallest> is correct for synthesis.
+ 
+Analyzing module <lcd_driver> in library <work>.
+WARNING:Xst:790 - "lcd_driver.v" line 136: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "lcd_driver.v" line 164: Index value(s) does not match array range, simulation mismatch.
+Module <lcd_driver> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <lcd_w> in unit <lcd_driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <lcd_driver>.
+    Related source file is "lcd_driver.v".
+WARNING:Xst:646 - Signal <db> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <step>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 3                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | step$cmp_eq0000           (positive)           |
+    | Power Up State     | 01                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 15                                             |
+    | Transitions        | 17                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 15                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | state$not0000             (positive)           |
+    | Power Up State     | 00000                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <linechange>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | linechange$not0000        (positive)           |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <lcd_e>.
+    Found 1-bit register for signal <lcd_rs>.
+    Found 4-bit register for signal <data>.
+    Found 21-bit up counter for signal <counter>.
+    Found 8-bit register for signal <pos>.
+    Found 8-bit subtractor for signal <pos$addsub0000>.
+    Summary:
+	inferred   3 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <lcd_driver> synthesized.
+
+
+Synthesizing Unit <Smallest>.
+    Related source file is "Smallest.v".
+WARNING:Xst:653 - Signal <line2<119:0>> is used but never assigned. This sourceless signal will be automatically connected to value 001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000.
+WARNING:Xst:653 - Signal <line1<119:104>> is used but never assigned. This sourceless signal will be automatically connected to value 0010110000100000.
+WARNING:Xst:653 - Signal <line1<95:80>> is used but never assigned. This sourceless signal will be automatically connected to value 0010110000100000.
+WARNING:Xst:653 - Signal <line1<71:56>> is used but never assigned. This sourceless signal will be automatically connected to value 0010110000100000.
+WARNING:Xst:653 - Signal <line1<47:0>> is used but never assigned. This sourceless signal will be automatically connected to value 001011000010000000100000001000000010000000100000.
+    Found 8-bit adder for signal <$add0000> created at line 66.
+    Found 8-bit adder for signal <$add0001> created at line 67.
+    Found 8-bit adder for signal <$add0002> created at line 68.
+    Found 8-bit adder for signal <$add0003> created at line 69.
+    Found 8-bit register for signal <a>.
+    Found 8-bit register for signal <b>.
+    Found 8-bit register for signal <c>.
+    Found 8-bit register for signal <d>.
+    Found 8-bit register for signal <line1<127:120>>.
+    Found 8-bit register for signal <line1<103:96>>.
+    Found 8-bit register for signal <line1<79:72>>.
+    Found 8-bit register for signal <line1<55:48>>.
+    Found 8-bit register for signal <line2<127:120>>.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0000> created at line 71.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0001> created at line 71.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0002> created at line 71.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0003> created at line 73.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0004> created at line 73.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0005> created at line 73.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0006> created at line 75.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0007> created at line 75.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0008> created at line 75.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0009> created at line 77.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0010> created at line 77.
+    Found 8-bit comparator lessequal for signal <line2_127$cmp_le0011> created at line 77.
+    Summary:
+	inferred  72 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  12 Comparator(s).
+Unit <Smallest> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 8-bit adder                                           : 4
+ 8-bit subtractor                                      : 1
+# Counters                                             : 1
+ 21-bit up counter                                     : 1
+# Registers                                            : 48
+ 1-bit register                                        : 42
+ 4-bit register                                        : 1
+ 8-bit register                                        : 5
+# Comparators                                          : 12
+ 8-bit comparator lessequal                            : 12
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <lcd/linechange/FSM> on signal <linechange[1:4]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0001
+ 01    | 1000
+ 10    | 0100
+ 11    | 0010
+-------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <lcd/state/FSM> on signal <state[1:15]> with one-hot encoding.
+--------------------------
+ State | Encoding
+--------------------------
+ 00000 | 000000000000001
+ 00001 | 000000000000010
+ 00010 | 000000000000100
+ 00011 | 000000000001000
+ 00100 | 000000000010000
+ 00101 | 000000000100000
+ 00110 | 000000001000000
+ 00111 | 000000010000000
+ 01000 | 000000100000000
+ 01001 | 000001000000000
+ 01010 | 000010000000000
+ 01011 | 000100000000000
+ 01100 | 001000000000000
+ 01101 | 010000000000000
+ 01110 | 100000000000000
+--------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <lcd/step/FSM> on signal <step[1:3]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 01    | 001
+ 10    | 010
+ 11    | 100
+-------------------
+WARNING:Xst:1293 - FF/Latch <d_7> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d_6> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d_5> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d_4> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d_3> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_7> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_6> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_5> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_4> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_3> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_7> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_6> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_5> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_4> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_3> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_7> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_6> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_5> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_4> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_3> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 3
+# Adders/Subtractors                                   : 5
+ 8-bit adder                                           : 4
+ 8-bit subtractor                                      : 1
+# Counters                                             : 1
+ 21-bit up counter                                     : 1
+# Registers                                            : 86
+ Flip-Flops                                            : 86
+# Comparators                                          : 12
+ 8-bit comparator lessequal                            : 12
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <d_7> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d_6> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d_5> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d_4> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d_3> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_7> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_6> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_5> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_4> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_3> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_7> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_6> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_5> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_4> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <b_3> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_7> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_6> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_5> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_4> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <a_3> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <line2_123> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line2_124> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line2_125> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line2_126> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line2_127> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_51> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_52> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_53> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_55> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_54> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_75> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_76> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_77> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_78> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_79> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_99> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_100> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_101> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_102> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_103> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_123> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_124> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_125> has a constant value of 1 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_126> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <line1_127> has a constant value of 0 in block <Smallest>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Smallest> ...
+
+Optimizing unit <lcd_driver> ...
+WARNING:Xst:1293 - FF/Latch <pos_0> has a constant value of 1 in block <lcd_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pos_1> has a constant value of 1 in block <lcd_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <pos_7> has a constant value of 0 in block <lcd_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <pos_7> has a constant value of 0 in block <lcd_driver>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Smallest, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 82
+ Flip-Flops                                            : 82
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Smallest.ngr
+Top Level Output File Name         : Smallest
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 15
+
+Cell Usage :
+# BELS                             : 194
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 20
+#      LUT2                        : 5
+#      LUT2_D                      : 1
+#      LUT2_L                      : 1
+#      LUT3                        : 19
+#      LUT3_L                      : 2
+#      LUT4                        : 74
+#      LUT4_D                      : 1
+#      LUT4_L                      : 12
+#      MUXCY                       : 26
+#      MUXF5                       : 8
+#      VCC                         : 1
+#      XORCY                       : 21
+# FlipFlops/Latches                : 82
+#      FD                          : 24
+#      FDE                         : 34
+#      FDR                         : 21
+#      FDRS                        : 2
+#      FDS                         : 1
+# Clock Buffers                    : 5
+#      BUFGP                       : 5
+# IO Buffers                       : 10
+#      IBUF                        : 3
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       74  out of   4656     1%  
+ Number of Slice Flip Flops:             82  out of   9312     0%  
+ Number of 4 input LUTs:                137  out of   9312     1%  
+ Number of IOs:                          15
+ Number of bonded IOBs:                  15  out of    232     6%  
+ Number of GCLKs:                         5  out of     24    20%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+PB<0>                              | BUFGP                  | 3     |
+PB<1>                              | BUFGP                  | 3     |
+PB<2>                              | BUFGP                  | 3     |
+PB<3>                              | BUFGP                  | 3     |
+clk                                | BUFGP                  | 70    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.713ns (Maximum Frequency: 148.965MHz)
+   Minimum input arrival time before clock: 2.113ns
+   Maximum output required time after clock: 4.450ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.713ns (frequency: 148.965MHz)
+  Total number of paths / destination ports: 1940 / 110
+-------------------------------------------------------------------------
+Delay:               6.713ns (Levels of Logic = 5)
+  Source:            lcd/pos_6 (FF)
+  Destination:       lcd/data_2 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: lcd/pos_6 to lcd/data_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             15   0.591   1.192  lcd/pos_6 (lcd/pos_6)
+     LUT2:I0->O            2   0.704   0.451  lcd/data_mux0000<2>1151 (lcd/N28)
+     LUT4:I3->O            3   0.704   0.610  lcd/data_mux0000<1>9 (lcd/data_mux0000<1>9)
+     LUT2:I1->O            1   0.704   0.000  lcd/data_mux0000<1>138_SW1_F (N126)
+     MUXF5:I0->O           1   0.321   0.424  lcd/data_mux0000<1>138_SW1 (N103)
+     LUT4:I3->O            1   0.704   0.000  lcd/data_mux0000<1>174 (lcd/data_mux0000<1>)
+     FDE:D                     0.308          lcd/data_2
+    ----------------------------------------
+    Total                      6.713ns (4.036ns logic, 2.677ns route)
+                                       (60.1% logic, 39.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'PB<0>'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              2.113ns (Levels of Logic = 1)
+  Source:            y<0> (PAD)
+  Destination:       a_0 (FF)
+  Destination Clock: PB<0> rising
+
+  Data Path: y<0> to a_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.587  y_0_IBUF (y_0_IBUF)
+     FD:D                      0.308          a_0
+    ----------------------------------------
+    Total                      2.113ns (1.526ns logic, 0.587ns route)
+                                       (72.2% logic, 27.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'PB<1>'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              2.113ns (Levels of Logic = 1)
+  Source:            y<0> (PAD)
+  Destination:       b_0 (FF)
+  Destination Clock: PB<1> rising
+
+  Data Path: y<0> to b_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.587  y_0_IBUF (y_0_IBUF)
+     FD:D                      0.308          b_0
+    ----------------------------------------
+    Total                      2.113ns (1.526ns logic, 0.587ns route)
+                                       (72.2% logic, 27.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'PB<2>'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              2.113ns (Levels of Logic = 1)
+  Source:            y<0> (PAD)
+  Destination:       c_0 (FF)
+  Destination Clock: PB<2> rising
+
+  Data Path: y<0> to c_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.587  y_0_IBUF (y_0_IBUF)
+     FD:D                      0.308          c_0
+    ----------------------------------------
+    Total                      2.113ns (1.526ns logic, 0.587ns route)
+                                       (72.2% logic, 27.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'PB<3>'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              2.113ns (Levels of Logic = 1)
+  Source:            y<0> (PAD)
+  Destination:       d_0 (FF)
+  Destination Clock: PB<3> rising
+
+  Data Path: y<0> to d_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.587  y_0_IBUF (y_0_IBUF)
+     FD:D                      0.308          d_0
+    ----------------------------------------
+    Total                      2.113ns (1.526ns logic, 0.587ns route)
+                                       (72.2% logic, 27.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              4.450ns (Levels of Logic = 1)
+  Source:            lcd/data_2 (FF)
+  Destination:       data<2> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: lcd/data_2 to data<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              4   0.591   0.587  lcd/data_2 (lcd/data_2)
+     OBUF:I->O                 3.272          data_2_OBUF (data<2>)
+    ----------------------------------------
+    Total                      4.450ns (3.863ns logic, 0.587ns route)
+                                       (86.8% logic, 13.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 25.00 secs
+Total CPU time to Xst completion: 11.60 secs
+ 
+--> 
+
+
+Total memory usage is 534832 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   77 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

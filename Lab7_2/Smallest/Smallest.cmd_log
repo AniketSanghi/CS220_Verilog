@@ -1,0 +1,85 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.xst" -ofn "/users/btech/sanghi/CS220/Lab7_2/Smallest/Smallest.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Smallest.ucf -p xc3s500e-fg320-4 Smallest.ngc Smallest.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Smallest_map.ncd Smallest.ngd Smallest.pcf 
+par -w -intstyle ise -ol high -t 1 Smallest_map.ncd Smallest.ncd Smallest.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Smallest.twx Smallest.ncd -o Smallest.twr Smallest.pcf -ucf Smallest.ucf 
+bitgen -intstyle ise -f Smallest.ut Smallest.ncd 

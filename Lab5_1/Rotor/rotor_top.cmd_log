@@ -1,0 +1,17 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab5_1/Rotor/rotor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab5_1/Rotor/rotor_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rotor_top.ucf -p xc3s500e-fg320-4 rotor_top.ngc rotor_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o rotor_top_map.ncd rotor_top.ngd rotor_top.pcf 
+par -w -intstyle ise -ol high -t 1 rotor_top_map.ncd rotor_top.ncd rotor_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml rotor_top.twx rotor_top.ncd -o rotor_top.twr rotor_top.pcf -ucf rotor_top.ucf 
+bitgen -intstyle ise -f rotor_top.ut rotor_top.ncd 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab5_1/Rotor/rotor_top.xst" -ofn "/users/btech/sanghi/CS220/Lab5_1/Rotor/rotor_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rotor_top.ucf -p xc3s500e-fg320-4 rotor_top.ngc rotor_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o rotor_top_map.ncd rotor_top.ngd rotor_top.pcf 
+par -w -intstyle ise -ol high -t 1 rotor_top_map.ncd rotor_top.ncd rotor_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml rotor_top.twx rotor_top.ncd -o rotor_top.twr rotor_top.pcf -ucf rotor_top.ucf 
+bitgen -intstyle ise -f rotor_top.ut rotor_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rotor_top.ucf -p xc3s500e-fg320-4 rotor_top.ngc rotor_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o rotor_top_map.ncd rotor_top.ngd rotor_top.pcf 
+par -w -intstyle ise -ol high -t 1 rotor_top_map.ncd rotor_top.ncd rotor_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml rotor_top.twx rotor_top.ncd -o rotor_top.twr rotor_top.pcf -ucf rotor_top.ucf 
+bitgen -intstyle ise -f rotor_top.ut rotor_top.ncd 

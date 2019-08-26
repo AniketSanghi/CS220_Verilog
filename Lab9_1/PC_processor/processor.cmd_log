@@ -1,0 +1,9 @@
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab9_1/PC_processor/processor.xst" -ofn "/users/btech/sanghi/CS220/Lab9_1/PC_processor/processor.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab9_1/PC_processor/processor.xst" -ofn "/users/btech/sanghi/CS220/Lab9_1/PC_processor/processor.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab9_1/PC_processor/processor.xst" -ofn "/users/btech/sanghi/CS220/Lab9_1/PC_processor/processor.syr" 
+xst -intstyle ise -ifn "/users/btech/sanghi/CS220/Lab9_1/PC_processor/processor.xst" -ofn "/users/btech/sanghi/CS220/Lab9_1/PC_processor/processor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc processor.ucf -p xc3s500e-fg320-4 processor.ngc processor.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o processor_map.ncd processor.ngd processor.pcf 
+par -w -intstyle ise -ol high -t 1 processor_map.ncd processor.ncd processor.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml processor.twx processor.ncd -o processor.twr processor.pcf -ucf processor.ucf 
+bitgen -intstyle ise -f processor.ut processor.ncd 

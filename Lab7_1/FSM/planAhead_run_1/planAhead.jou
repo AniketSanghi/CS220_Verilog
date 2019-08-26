@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Mar  6 16:02:02 2019
+# Process ID: 2818
+# Log file: /users/btech/sanghi/CS220/Lab7_1/FSM/planAhead_run_1/planAhead.log
+# Journal file: /users/btech/sanghi/CS220/Lab7_1/FSM/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/sanghi/CS220/Lab7_1/FSM/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin F12 [get_ports {led[0]}]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports {led[1]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {led[2]}]
+endgroup
+startgroup
+set_property package_pin F11 [get_ports {led[3]}]
+endgroup
+set_property iostandard LVTTL [get_ports [list {led[3]} {led[2]} {led[1]} {led[0]}]]
+set_property drive 8 [get_ports [list {led[3]} {led[2]} {led[1]} {led[0]}]]
+startgroup
+set_property package_pin L13 [get_ports {y[0]}]
+endgroup
+startgroup
+set_property package_pin L14 [get_ports {y[1]}]
+endgroup
+set_property iostandard LVCMOS25 [get_ports [list {y[1]}]]
+set_property iostandard LVTTL [get_ports [list {y[1]} {y[0]}]]
+set_property pulltype PULLUP [get_ports [list {y[1]} {y[0]}]]
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+startgroup
+set_property package_pin V16 [get_ports RPB]
+endgroup
+set_property iostandard LVTTL [get_ports [list RPB]]
+set_property pulltype PULLDOWN [get_ports [list RPB]]
+save_constraints

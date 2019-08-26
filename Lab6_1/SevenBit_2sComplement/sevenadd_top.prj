@@ -1,0 +1,4 @@
+verilog work "onebitadder.v"
+verilog work "sevenbitadder.v"
+verilog work "rotor.v"
+verilog work "sevenadd_top.v"
